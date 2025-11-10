@@ -1,33 +1,31 @@
 
 import sqlite3
 
-#Criar um banco de dados chamado biblioteca.db
 
-conexao = sqlite3.connect('biblioteca.db')
-cursor = conexao.cursor()
+# Dados para inserir
+livros = [
+    ('Dom Almeida', 'Amélia Santos', '1988', 'Romance', 1),
+    ('A vida de Alice', 'Bento Costa', '1940', 'Ficção', 1),
+    ('O mistério da casa ao lado', 'Clara Machado', '2020', 'Suspense', 0),
+    ('Quanto mais risos melhor', 'Lorena Sanchez', '1945', 'Comédia', 1),
+    ('Revolução do Brasil', 'Paulo Freitas', '1899', 'Distopia', 0),
+]
 
-# Criar a tabela Livros 
 
-cursor.execute('''
-CREATE TABLE IF NOT EXISTS Livros (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    titulo TEXT NOT NULL UNIQUE,
-    autor TEXT,
-    ano INTEREGER,
-    genero TEXT,
-    disponivel INTEGER CHECK (disponivel IN (0, 1))
-)
-''')
+# Inserindo livros
 
-# Confira as alterações
+
+# Confirma as alterações
 conexao.commit()
 
-print("Tabela 'Livros' criada com sucesso!")
+print("Livros inseridos com sucesso!")
 
 # Fecha a conexão
-conexao.close()
+conexao.close() 
 
-# Conectar ao banco de dados ( usar biblioteca.bd)
+import sqlite3
+
+# Conecta ao banco de dados
 
 conexao = sqlite3.connect('biblioteca.db')
 cursor = conexao.cursor()
