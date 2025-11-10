@@ -1,0 +1,17 @@
+
+Entendendo o código:
+
+CAMPO E TIPO DE RESTRINÇÕES
+
+id -	INTEGER	PRIMARY KEY AUTOINCREMENT (chave primária e auto-incrementa)
+
+titulo - TEXT	NOT NULL + UNIQUE (não pode ser vazio e não pode repetir)
+
+autor -	TEXT	opcional
+
+ano -	INTEGER	opcional
+
+genero - TEXT	opcional
+
+disponivel - INTEGER 1 = disponível, 0 = indisponível
+
